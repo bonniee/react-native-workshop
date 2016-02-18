@@ -11,7 +11,7 @@ import React, {
   View
 } from 'react-native';
 
-class Dictionary extends Component {
+class Dictionary3 extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('Dictionary', () => Dictionary);
+AppRegistry.registerComponent('Dictionary3', () => Dictionary3);

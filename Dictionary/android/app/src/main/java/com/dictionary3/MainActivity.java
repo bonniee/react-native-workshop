@@ -1,4 +1,4 @@
-package com.dictionary;
+package com.dictionary3;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;
@@ -15,7 +15,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "Dictionary";
+        return "Dictionary3";
     }
 
     /**
@@ -34,6 +34,7 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new MainReactPackage());
+        new MainReactPackage()
+      );
     }
 }

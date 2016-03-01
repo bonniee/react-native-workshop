@@ -10,7 +10,7 @@ class Dictionary extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Dictionary component
+          Dictionary component!
         </Text>
       </View>
     );

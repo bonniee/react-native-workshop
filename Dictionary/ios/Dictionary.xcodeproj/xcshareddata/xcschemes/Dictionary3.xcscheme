@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Dictionary3.app"
+               BuildableName = "Dictionary.app"
                BlueprintName = "Dictionary"
                ReferencedContainer = "container:Dictionary.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Dictionary3.app"
+            BuildableName = "Dictionary.app"
             BlueprintName = "Dictionary"
             ReferencedContainer = "container:Dictionary.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Dictionary3.app"
+            BuildableName = "Dictionary.app"
             BlueprintName = "Dictionary"
             ReferencedContainer = "container:Dictionary.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Dictionary3.app"
+            BuildableName = "Dictionary.app"
             BlueprintName = "Dictionary"
             ReferencedContainer = "container:Dictionary.xcodeproj">
          </BuildableReference>

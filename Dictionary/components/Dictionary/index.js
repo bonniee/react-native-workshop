@@ -67,9 +67,11 @@ var App = React.createClass({
   },
   render() {
     return (
-      <Navigator
-        initialRoute={{name: 'search', index: 0}}
-        renderScene={this._renderScene}/>
+      <View style={styles.container}>
+        <Navigator
+          initialRoute={{name: 'search', index: 0}}
+          renderScene={this._renderScene}/>
+      </View>
       );
   }
 });
@@ -77,6 +79,10 @@ var App = React.createClass({
 const styles = StyleSheet.create({
   welcome: {
     margin: 15
+  },
+  container: {
+    marginTop: 40,
+    flex: 1
   }
 });
 

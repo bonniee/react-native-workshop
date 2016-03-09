@@ -2,7 +2,8 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
 import Wordlist from '../Wordlist';
@@ -27,10 +28,43 @@ var Dictionary = React.createClass({
   }
 });
 
+var App = React.createClass({
+  _renderScene(route, navigator) {
+    var back = () => {
+      if (route.index > 0) {
+        navigator.pop();
+      }
+    }
+    var forward = (sceneName, data) => {
+      navigator.push({
+        name: sceneName,
+        data: data,
+        index: route.index + 1
+      });
+    }
+    if (route.name == 'search') {
+      return (<Dictionary onBack={back} onForward={forward}/>);
+    }
+    else if (route.name == 'definition') {
+    }
+    else {
+      console.error('Unknown scene!');
+      return null;
+    }
+  },
+  render() {
+    return (
+      <Navigator
+        initialRoute={{name: 'search', index: 0}}
+        renderScene={this._renderScene}/>
+      );
+  }
+});
+
 const styles = StyleSheet.create({
   welcome: {
     margin: 15
   }
 });
 
-export default Dictionary;
+export default App;

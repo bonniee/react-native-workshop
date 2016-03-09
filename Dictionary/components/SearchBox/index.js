@@ -12,12 +12,16 @@ var SearchBox = React.createClass({
       text: ''
     };
   },
+  _textChanged(text) {
+    this.setState({text: text});
+    this.props.textChanged(text);
+  },
   render() {
     return (
       <View style={styles.container}>
         <TextInput
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-        onChangeText={(text) => this.setState({text})}
+        onChangeText={this._textChanged}
         value={this.state.text}/>
       </View>
     );

@@ -6,14 +6,13 @@ import React, {
   ListView
 } from 'react-native';
 
-var Dict = require('../../data/english.json');
+var Dictionary = require('../../data/english.json');
 
 var WordList = React.createClass({
   getDefaultProps() {
     var words = Object.keys(Dict).slice(0,5).sort();
     return {
-      words: words,
-      prefix: ''
+      words: words
     };
   },
 
@@ -23,11 +22,12 @@ var WordList = React.createClass({
   },
 
   _renderRow(data) {
+    console.log(this.props.prefix);
     if (!data.startsWith(this.props.prefix)) {
       return null;
     }
     return (
-      <View>
+      <View key={data}>
         <Text>{data}: {Dict[data]}</Text>
       </View>
       );

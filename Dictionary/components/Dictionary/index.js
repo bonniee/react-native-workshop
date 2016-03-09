@@ -8,16 +8,25 @@ import React, {
 import Wordlist from '../Wordlist';
 import SearchBox from '../SearchBox';
 
-class Dictionary extends Component {
+var Dictionary = React.createClass({
+  getInitialState() {
+    return {text: ''};
+  },
+
+  _textChanged(text) {
+    this.setState({text: text});
+    console.log('iiiiii');
+  },
+
   render() {
     return (
         <View style={styles.welcome}>
-          <SearchBox/>
-          <Wordlist/>
+          <SearchBox textChanged={this._textChanged}/>
+          <Wordlist prefix={this.state.text}/>
         </View>
     );
   }
-}
+});
 
 const styles = StyleSheet.create({
   container: {

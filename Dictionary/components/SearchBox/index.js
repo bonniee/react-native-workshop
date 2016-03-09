@@ -14,9 +14,9 @@ var SearchBox = React.createClass({
   },
 
   _textChanged(text) {
-    var lowerCased = text.toUpperCase();
-    this.setState({text: lowerCased});
-    this.props.textChanged(lowerCased);
+    var upperCased = text.toUpperCase();
+    this.setState({text: upperCased});
+    this.props.textChanged(upperCased);
   },
 
   render() {
@@ -24,7 +24,7 @@ var SearchBox = React.createClass({
       <View style={styles.container}>
         <TextInput
         autoCapitalize="none"
-        autoCorrect="false"
+        autoCorrect={false}
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         onChangeText={this._textChanged}
         value={this.state.text}/>
@@ -39,11 +39,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
   }
 });
 

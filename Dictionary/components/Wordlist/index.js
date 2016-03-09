@@ -6,40 +6,31 @@ import React, {
   ListView
 } from 'react-native';
 
-var Dictionary = require('../../data/english.json');
+import InnerWordList from './InnerList';
+import Dictionary from '../../data/english.json';
+
 var Words = Object.keys(Dictionary).slice(0,500).sort();
 
 var SearchableWordlist = React.createClass({
   getDefaultProps() {
     return {
       prefix: '',
-      ds: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+      ds: new ListView.DataSource({
+        rowHasChanged: (r1, r2) => r1.word !== r2.word
+      })
     };
   },
 
   render() {
     var filteredWords = Words.filter((w) => w.startsWith(this.props.prefix));
-    return (
-      <WordList dataSource={this.props.ds.cloneWithRows(filteredWords)}/>
-      );
-  }
-});
+    var wordsWithDefinitions = filteredWords.map((w) => {
+      return {word: w, definition: Dictionary[w]}
+    });
 
-var WordList = React.createClass({
-  _renderRow(data) {
     return (
-      <View key={data}>
-        <Text>{data}: {Dictionary[data]}</Text>
-      </View>
+      <InnerWordList
+        dataSource={this.props.ds.cloneWithRows(wordsWithDefinitions)}/>
       );
-  },
-
-  render() {
-    return (
-        <ListView
-          dataSource={this.props.dataSource}
-          renderRow={this._renderRow}/>
-    );
   }
 });
 

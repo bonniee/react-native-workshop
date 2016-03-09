@@ -8,6 +8,7 @@ import React, {
 
 import Wordlist from '../Wordlist';
 import SearchBox from '../SearchBox';
+import Definition from '../Definition';
 
 var Dictionary = React.createClass({
   getInitialState() {
@@ -18,11 +19,17 @@ var Dictionary = React.createClass({
     this.setState({text: text});
   },
 
+  _wordPressed(data) {
+    this.props.onForward('definition', data);
+  },
+
   render() {
     return (
         <View style={styles.welcome}>
           <SearchBox textChanged={this._textChanged}/>
-          <Wordlist prefix={this.state.text}/>
+          <Wordlist
+            prefix={this.state.text}
+            onWordPress={this._wordPressed}/>
         </View>
     );
   }
@@ -43,9 +50,15 @@ var App = React.createClass({
       });
     }
     if (route.name == 'search') {
-      return (<Dictionary onBack={back} onForward={forward}/>);
+      return (
+        <Dictionary
+          onBack={back}
+          onForward={forward}/>);
     }
     else if (route.name == 'definition') {
+      return (
+        <Definition word={route.data.word} definition={route.data.definition}/>
+        );
     }
     else {
       console.error('Unknown scene!');

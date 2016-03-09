@@ -29,6 +29,7 @@ var SearchableWordlist = React.createClass({
 
     return (
       <InnerWordList
+        onPress={this.props.onWordPress}
         dataSource={this.props.ds.cloneWithRows(wordsWithDefinitions)}/>
       );
   }

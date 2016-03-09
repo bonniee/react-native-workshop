@@ -3,15 +3,19 @@ import React, {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
+  TouchableHighlight
 } from 'react-native';
 
 var WordList = React.createClass({
   _renderRow(data) {
     return (
-      <View key={data.word}>
-        <Text>{data.word}: {data.definition}</Text>
-      </View>
+      <TouchableHighlight
+        onPress={() => this.props.onPress(data)}>
+        <View key={data.word}>
+          <Text>{data.word}: {data.definition}</Text>
+        </View>
+      </TouchableHighlight>
       );
   },
 

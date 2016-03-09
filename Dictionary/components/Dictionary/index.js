@@ -15,7 +15,6 @@ var Dictionary = React.createClass({
 
   _textChanged(text) {
     this.setState({text: text});
-    console.log('iiiiii');
   },
 
   render() {
@@ -29,16 +28,8 @@ var Dictionary = React.createClass({
 });
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    margin: 15
   }
 });
 

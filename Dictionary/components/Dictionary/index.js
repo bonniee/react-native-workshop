@@ -6,34 +6,8 @@ import React, {
   Navigator
 } from 'react-native';
 
-import Wordlist from '../Wordlist';
-import SearchBox from '../SearchBox';
+import Dictionary from '../Search';
 import Definition from '../Definition';
-
-var Dictionary = React.createClass({
-  getInitialState() {
-    return {text: ''};
-  },
-
-  _textChanged(text) {
-    this.setState({text: text});
-  },
-
-  _wordPressed(data) {
-    this.props.onForward('definition', data);
-  },
-
-  render() {
-    return (
-        <View style={styles.welcome}>
-          <SearchBox textChanged={this._textChanged}/>
-          <Wordlist
-            prefix={this.state.text}
-            onWordPress={this._wordPressed}/>
-        </View>
-    );
-  }
-});
 
 var App = React.createClass({
   _renderScene(route, navigator) {
@@ -49,6 +23,8 @@ var App = React.createClass({
         index: route.index + 1
       });
     }
+
+    // Render different components based on route name.
     if (route.name == 'search') {
       return (
         <Dictionary
@@ -65,6 +41,7 @@ var App = React.createClass({
       return null;
     }
   },
+
   render() {
     return (
       <View style={styles.container}>
@@ -77,9 +54,6 @@ var App = React.createClass({
 });
 
 const styles = StyleSheet.create({
-  welcome: {
-    margin: 15
-  },
   container: {
     marginTop: 40,
     flex: 1

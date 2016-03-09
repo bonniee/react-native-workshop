@@ -8,12 +8,4 @@ import React, {
 
 import Dictionary from './components/Dictionary';
 
-class App extends Component {
-  render() {
-    return (
-        <Dictionary/>
-    );
-  }
-}
-
-AppRegistry.registerComponent('Dictionary3', () => App);
+AppRegistry.registerComponent('Dictionary', () => Dictionary);

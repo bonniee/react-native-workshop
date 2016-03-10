@@ -2,38 +2,62 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
-class Dictionary extends Component {
+import Dictionary from '../Search';
+import Definition from '../Definition';
+
+var App = React.createClass({
+  _renderScene(route, navigator) {
+    var back = () => {
+      if (route.index > 0) {
+        navigator.pop();
+      }
+    }
+    var forward = (sceneName, data) => {
+      navigator.push({
+        name: sceneName,
+        data: data,
+        index: route.index + 1
+      });
+    }
+
+    // Render different components based on route name.
+    if (route.name == 'search') {
+      return (
+        <Dictionary
+          onBack={back}
+          onForward={forward}/>);
+    }
+    else if (route.name == 'definition') {
+      return (
+        <Definition word={route.data.word} definition={route.data.definition}/>
+        );
+    }
+    else {
+      console.error('Unknown scene!');
+      return null;
+    }
+  },
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Dictionary component!
-        </Text>
+        <Navigator
+          initialRoute={{name: 'search', index: 0}}
+          renderScene={this._renderScene}/>
       </View>
-    );
+      );
   }
-}
+});
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    marginTop: 40,
+    flex: 1
+  }
 });
 
-export default Dictionary;
+export default App;

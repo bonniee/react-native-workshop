@@ -35,10 +35,10 @@ var SearchBox = React.createClass({
 
 const styles = StyleSheet.create({
   container: {
+    padding: 15,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'center'
   }
 });
 

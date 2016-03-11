@@ -1,9 +1,7 @@
 import React, {
-  Component,
   StyleSheet,
   Text,
   View,
-  Navigator
 } from 'react-native';
 
 import Wordlist from '../Wordlist';
@@ -11,7 +9,9 @@ import SearchBox from './SearchBox';
 
 var Search = React.createClass({
   getInitialState() {
-    return {text: ''};
+    return {
+      text: ''
+    };
   },
 
   _textChanged(text) {
@@ -24,7 +24,7 @@ var Search = React.createClass({
 
   render() {
     return (
-        <View style={styles.welcome}>
+        <View style={styles.searchContainer}>
           <SearchBox textChanged={this._textChanged}/>
             <Wordlist
               prefix={this.state.text}
@@ -35,12 +35,8 @@ var Search = React.createClass({
 });
 
 const styles = StyleSheet.create({
-  welcome: {
-    margin: 15
-  },
-  wordlistContainer: {
-    flex: 1,
-    backgroundColor: '#66FFFF'
+  searchContainer: {
+    padding: 15
   }
 });
 

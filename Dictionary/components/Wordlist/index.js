@@ -1,15 +1,11 @@
 import React, {
-  Component,
-  StyleSheet,
-  Text,
-  View,
   ListView
 } from 'react-native';
 
 import InnerWordList from './InnerList';
 import Dictionary from '../../data/english.json';
 
-var Words = Object.keys(Dictionary).slice(0,50).sort();
+var Words = Object.keys(Dictionary).slice(0,500).sort();
 
 var SearchableWordlist = React.createClass({
   getDefaultProps() {
@@ -32,11 +28,6 @@ var SearchableWordlist = React.createClass({
         onPress={this.props.onWordPress}
         dataSource={this.props.ds.cloneWithRows(wordsWithDefinitions)}/>
       );
-  }
-});
-
-const styles = StyleSheet.create({
-  container: {
   }
 });
 

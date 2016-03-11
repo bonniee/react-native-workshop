@@ -1,5 +1,4 @@
 import React, {
-  Component,
   StyleSheet,
   Text,
   View,
@@ -14,7 +13,7 @@ var WordList = React.createClass({
       <TouchableHighlight
         onPress={() => this.props.onPress(data)}>
         <View key={data.word}>
-          <Text>{data.word}: {data.definition}</Text>
+          <Text>{data.word}</Text>
         </View>
       </TouchableHighlight>
       );
@@ -30,12 +29,13 @@ var WordList = React.createClass({
     );
   }
 });
+
 const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
-    height: height - 100
+    height: height - 180
   }
 });
 

@@ -8,15 +8,23 @@ var Definition = React.createClass({
   render() {
     return (
       <View>
-        <Text>{this.props.word}</Text>
-        <Text>{this.props.definition}</Text>
+        <Text style={styles.word}>
+          {this.props.word}
+        </Text>
+        <Text style={styles.definition}>
+          {this.props.definition}
+        </Text>
       </View>
       );
   }
 });
 
 const styles = StyleSheet.create({
-  container: {
+  word: {
+    fontWeight: 'bold'
+  },
+  definition: {
+    fontWeight: 'normal'
   }
 });
 

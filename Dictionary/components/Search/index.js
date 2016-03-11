@@ -26,9 +26,9 @@ var Search = React.createClass({
     return (
         <View style={styles.welcome}>
           <SearchBox textChanged={this._textChanged}/>
-          <Wordlist
-            prefix={this.state.text}
-            onWordPress={this._wordPressed}/>
+            <Wordlist
+              prefix={this.state.text}
+              onWordPress={this._wordPressed}/>
         </View>
     );
   }
@@ -38,9 +38,9 @@ const styles = StyleSheet.create({
   welcome: {
     margin: 15
   },
-  container: {
-    marginTop: 40,
-    flex: 1
+  wordlistContainer: {
+    flex: 1,
+    backgroundColor: '#66FFFF'
   }
 });
 

@@ -4,7 +4,8 @@ import React, {
   Text,
   View,
   ListView,
-  TouchableHighlight
+  TouchableHighlight,
+  Dimensions
 } from 'react-native';
 
 var WordList = React.createClass({
@@ -21,15 +22,20 @@ var WordList = React.createClass({
 
   render() {
     return (
+      <View style={styles.listContainer}>
         <ListView
           dataSource={this.props.dataSource}
           renderRow={this._renderRow}/>
+      </View>
     );
   }
 });
+const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-  container: {
+  listContainer: {
+    flex: 1,
+    height: height - 100
   }
 });
 

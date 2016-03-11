@@ -9,7 +9,7 @@ import React, {
 import InnerWordList from './InnerList';
 import Dictionary from '../../data/english.json';
 
-var Words = Object.keys(Dictionary).slice(0,500).sort();
+var Words = Object.keys(Dictionary).slice(0,50).sort();
 
 var SearchableWordlist = React.createClass({
   getDefaultProps() {

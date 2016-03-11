@@ -26,43 +26,55 @@ var App = React.createClass({
       });
     }
 
+    var content = null;
+
     // Render different components based on route name.
     if (route.name == 'search') {
-      return (
+      content = (
         <Search
           onBack={back}
           onForward={forward}/>);
     }
     else if (route.name == 'definition') {
-      return (
-        <Definition word={route.data.word} definition={route.data.definition}/>
+      content = (
+        <Definition
+          word={route.data.word}
+          definition={route.data.definition}/>
         );
     }
-    else {
-      console.error('Unknown scene!');
-      return null;
-    }
+
+    return (
+      <View style={styles.container}>
+        {content}
+      </View>
+      );
   },
 
   render() {
     return (
-      <View style={styles.container}>
         <Navigator
           initialRoute={{name: 'search', index: 0}}
           renderScene={this._renderScene}
           navigationBar={
             <Navigator.NavigationBar
+              style={styles.navBar}
               routeMapper={NavigationBarRouteMapper}/>
-            }/>
-      </View>
+          }/>
       );
   }
 });
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
-    flex: 1
+    marginTop: 60,
+    padding: 10,
+    backgroundColor: '#FFFFFF'
+  },
+  navBar: {
+    backgroundColor: '#5599FF',
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#3333FF'
   }
 });
 

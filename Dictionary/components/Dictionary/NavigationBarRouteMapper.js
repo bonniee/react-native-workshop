@@ -20,7 +20,9 @@ var NavigationBarRouteMapper = {
     }
 
     return (
-      <TouchableHighlight onPress={onPress}>
+      <TouchableHighlight
+        onPress={onPress}
+        style={[styles.button, styles.navItem]}>
         <Text>Back</Text>
       </TouchableHighlight>
       );
@@ -32,11 +34,27 @@ var NavigationBarRouteMapper = {
     
   Title: function(route, navigator, index, navState) {
     return (
-      <Text>
-        Tralalala
-      </Text>
+      <View style={[styles.title, styles.navItem]}>
+        <Text>DICTIONARY</Text>
+      </View>
     );
   },
 };
+
+const styles = StyleSheet.create({
+  title: {
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  navItem: {
+    flex: 1,
+    padding: 5
+  },
+  button: {
+    backgroundColor: '#FFFFFF',
+    marginBottom: 15,
+    marginLeft: 10
+  }
+});
 
 export default NavigationBarRouteMapper;

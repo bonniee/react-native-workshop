@@ -9,41 +9,7 @@ import React, {
 
 import Search from '../Search';
 import Definition from '../Definition';
-
-var NavBar = React.createClass({
-  render() {
-    return (
-      <View style={styles.navBar}>
-        <Text>Some awesome</Text>
-      </View>
-      );
-  }
-});
-
-var NavigationBarRouteMapper = {
-  LeftButton: function(route, navigator, index, navState) {
-    return (<TouchableHighlight  style={{marginTop: 30}} onPress={() => {
-      if (index > 0) {
-        navigator.pop();
-      }
-    }}>
-      <Text>Back</Text>
-    </TouchableHighlight>
-  )
-  },
-    
-  RightButton: function(route, navigator, index, navState) {
-    return null;
-  },
-    
-  Title: function(route, navigator, index, navState) {
-    return (
-      <Text>
-        Tralalala
-      </Text>
-    );
-  },
-}
+import NavigationBarRouteMapper from './NavigationBarRouteMapper';
 
 var App = React.createClass({
   _renderScene(route, navigator) {
@@ -97,12 +63,6 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 40,
     flex: 1
-  },
-  navBar: {
-    backgroundColor: '#FF0000',
-    height: 50,
-    flex: 1,
-    width: 100
   }
 });
 

@@ -3,6 +3,7 @@ import React, {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight,
   Navigator
 } from 'react-native';
 
@@ -38,7 +39,7 @@ var NavigationBarRouteMapper = {
   Title: function(route, navigator, index, navState) {
     return (
       <Text>
-        {route.name}
+        Tralalala
       </Text>
     );
   },
@@ -83,7 +84,10 @@ var App = React.createClass({
         <Navigator
           initialRoute={{name: 'search', index: 0}}
           renderScene={this._renderScene}
-          />
+          navigationBar={
+            <Navigator.NavigationBar
+              routeMapper={NavigationBarRouteMapper}/>
+            }/>
       </View>
       );
   }

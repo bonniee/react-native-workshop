@@ -13,7 +13,7 @@ var WordList = React.createClass({
       <TouchableHighlight
         onPress={() => this.props.onPress(data)}>
         <View key={data.word}>
-          <Text>{data.word}</Text>
+          <Text style={styles.word}>{data.word}</Text>
         </View>
       </TouchableHighlight>
       );
@@ -36,6 +36,9 @@ const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
     height: height - 180
+  },
+  word: {
+    padding: 2
   }
 });
 

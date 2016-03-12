@@ -15,7 +15,7 @@ module.exports = Mondrian;
 
 - Edit the `components/Mondrian/styles.js` file, until it looks like:
 
-<img src="Tutorial/components/Mondrian/screenshots/mondrian-02.png"/>
+<img src="Tutorial/components/Mondrian/screenshots/mondrian-02.png" width="250px"/>
 
 ## Dictionary app
 

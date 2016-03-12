@@ -17,7 +17,7 @@ module.exports = Mondrian;
 
 - Edit the `components/Mondrian/styles.js` file, until it looks like:
 
-![Mondrian](Tutorial/components/Mondrian/screenshots/mondrian-02.png)
+<img src="Tutorial/components/Mondrian/screenshots/mondrian-02.png" width="250px"/>
 
 ## Weather app
 
@@ -50,3 +50,4 @@ fetch('http://api.openweathermap.org/data/2.5/weather?q='
 ### Style the app
 
 Change the styles of the Weather app as you like!
+

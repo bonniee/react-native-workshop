@@ -3,7 +3,8 @@ var {
   StyleSheet,
   Text,
   View,
-  TextInput
+  TextInput,
+  Image
 } = React;
 
 var Forecast = require('./forecast');
@@ -48,6 +49,10 @@ var WeatherProject = React.createClass({
     }
     return (
       <View style={styles.container}>
+        <Image
+          style={styles.backdrop}
+          resizeMode='cover'
+          source={{uri: 'http://www.photographymad.com/files/images/purple-flowers.jpg'}}>
           <View style={styles.overlay}>
            <View style={styles.row}>
              <Text style={styles.mainText}>
@@ -61,6 +66,7 @@ var WeatherProject = React.createClass({
            </View>
            {content}
          </View>
+       </Image>
       </View>
     );
   }

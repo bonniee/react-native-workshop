@@ -47,6 +47,18 @@ fetch('http://api.openweathermap.org/data/2.5/weather?q='
   })
 ```
 
+### Add an image background
+
+Try adding a background image to the app!
+
+```
+<Image
+  resizeMode='cover'
+  source={{uri: 'http://www.photographymad.com/files/images/purple-flowers.jpg'}}>
+  // Your content here...
+</Image>
+```
+
 ### Style the app
 
 Change the styles of the Weather app as you like!

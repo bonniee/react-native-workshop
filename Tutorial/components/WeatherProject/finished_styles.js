@@ -8,8 +8,7 @@ var baseFontSize = 16;
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    paddingTop: 30
+    paddingTop: 30,
   },
   backdrop: {
     flex: 1,

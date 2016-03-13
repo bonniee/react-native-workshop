@@ -34,6 +34,8 @@ Add a component to take input, wire up the callback and state changes so that it
   onSubmitEditing={this._handleTextChange}/>
 ```
 
+*Hint*: use the debugger to examine the event object passed to the callback.
+
 ### Making an API Call
 
 Use the `fetch` API to get the weather.

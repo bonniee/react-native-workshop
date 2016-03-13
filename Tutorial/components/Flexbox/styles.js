@@ -6,8 +6,6 @@ var {
 
 var styles = StyleSheet.create({
   parent: {
-    flex: 1,
-    flexDirection: 'row',
     backgroundColor: '#F5FCFF',
     borderColor: '#0099AA',
     borderWidth: 5,

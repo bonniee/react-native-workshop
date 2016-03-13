@@ -13,22 +13,12 @@ var WeatherProject = React.createClass({
     });
   },
 
-  _handleTextChange(event) {
-    console.log(event.nativeEvent.text);
-    this.setState({
-      zip: event.nativeEvent.text
-    });
-  },
-
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           You input {this.state.zip}.
         </Text>
-        <TextInput
-          style={styles.input}
-          onSubmitEditing={this._handleTextChange}/>
       </View>
     );
   }

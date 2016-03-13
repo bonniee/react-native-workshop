@@ -39,6 +39,10 @@ Add a component to take input, wire up the callback and state changes so that it
 Use the `fetch` API to get the weather.
 
 ```
+var API_KEY = 'bbeb34ebf60ad50f7893e7440a1e2b0b';
+```
+
+```
 fetch('http://api.openweathermap.org/data/2.5/weather?q='
   + zip + '&units=imperial&APPID=' + API_KEY)
   .then((response) => response.json())

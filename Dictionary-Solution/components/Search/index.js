@@ -26,9 +26,9 @@ var Search = React.createClass({
     return (
         <View style={styles.searchContainer}>
           <SearchBox textChanged={this._textChanged}/>
-            <Wordlist
-              prefix={this.state.text}
-              onWordPress={this._wordPressed}/>
+          <Wordlist
+            prefix={this.state.text}
+            onWordPress={this._wordPressed}/>
         </View>
     );
   }

@@ -10,9 +10,15 @@ var FlexDemo = React.createClass({
   render: function() {
     return (
       <View style={styles.parent}>
-        <Text style={styles.child}> Child One </Text>
-        <Text style={styles.child}> Child Two </Text>
-        <Text style={styles.child}> Child Three </Text>  
+        <Text style={[styles.child, styles.childOne]}>
+          Child One
+        </Text>
+        <Text style={[styles.child, styles.childTwo]}>
+          Child Two
+        </Text>
+        <Text style={[styles.child, styles.childThree]}>
+          Child Three
+        </Text>  
       </View>
     );
   }

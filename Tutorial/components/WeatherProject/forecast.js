@@ -1,10 +1,9 @@
-var React = require('react-native');
-var {
-  StyleSheet,
+import React from 'react';
+import {
   Text,
-  View
-} = React;
-
+  View,
+  StyleSheet
+} from 'react-native';
 
 var Forecast = React.createClass({
   render() {

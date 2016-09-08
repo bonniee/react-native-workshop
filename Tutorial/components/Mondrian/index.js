@@ -1,12 +1,10 @@
-'use strict';
-
-var React = require('react-native');
-var {
-  AppRegistry,
-  StyleSheet,
+import React from 'react';
+import {
   Text,
   View,
-} = React;
+  StyleSheet
+} from 'react-native';
+
 var styles = require('./style');
 
 var Mondrian = React.createClass({

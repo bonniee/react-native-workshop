@@ -1,8 +1,8 @@
-var React = require('react-native');
-var {
+import React from 'react';
+import {
   Text,
-  View,
-} = React;
+  View
+} from 'react-native';
 
 var styles = require('./styles');
 

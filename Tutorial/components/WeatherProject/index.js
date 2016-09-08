@@ -1,10 +1,10 @@
-var React = require('react-native');
-var {
-  StyleSheet,
+import React from 'react';
+import {
   Text,
   View,
+  StyleSheet,
   TextInput
-} = React;
+} from 'react-native';
 
 var WeatherProject = React.createClass({
   getInitialState() {

@@ -1,7 +1,6 @@
-var React = require('react-native');
-var {
+import {
   StyleSheet
-} = React;
+} from 'react-native';
 
 var baseFontSize = 16;
 

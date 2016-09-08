@@ -1,11 +1,11 @@
-var React = require('react-native');
-var {
-  StyleSheet,
+import React from 'react';
+import {
   Text,
   View,
+  StyleSheet,
   TextInput,
   Image
-} = React;
+} from 'react-native';
 
 var Forecast = require('./forecast');
 var styles = require('./finished_styles');
